@@ -1,42 +1,32 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
 <!-- To add a badge  -->
 <!-- [![Travis-CI Build Status](https://travis-ci.org/geanders/countyweather.svg?branch=master)](https://travis-ci.org/geanders/countyweather) -->
 <!-- [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/countyweather)](https://cran.r-project.org/package=countyweather) -->
+MclustSepCov
+============
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-",
-  error = TRUE
-)
-```
-
-# MclustSepCov
-
-This is a README file of the R package \emph{MclustSepCov}. In our paper, not yet available, we analyze the multivariate longitudinal data by applying model-based clustering. We assume the Gaussian mixture model with separable covariance structure where one of covariance factors is assumed to have a temporal structure.
-
+This is a README file of the R package . In our paper, not yet available, we analyze the multivariate longitudinal data by applying model-based clustering. We assume the Gaussian mixture model with separable covariance structure where one of covariance factors is assumed to have a temporal structure.
 
 To install our package, you may simply execute the following codes:
-```{r, eval = FALSE}
+
+``` r
 # install.packages("devtools")
 devtools::install_github("inmybrain/MclustSepCov")
 ```
+
 or you can install the source file using the command line after downloading it from [here](https://drive.google.com/uc?export=download&id=1l2q381dgUCr5uBN2Pp6ZjsDOYfF_U3mP);
-```{bash, eval = FALSE}
+
+``` bash
 R CMD INSTALL MclustSepCov_1.0.tar.gz
 ```
 
+A basic example of using the package
+------------------------------------
 
-## A basic example of using the package
-We give a toy example to apply the main function `Mclust_SEP_cpp`. First, generate $40$ samples from the Gaussian mixture model with two components. One of the component has zero mean vector, while the other a vector parallel to $(1, \cdots, 1)^{\rm T}$ with modulus $5$. We assume the heterogeneous covariance structure between them.
+We give a toy example to apply the main function `Mclust_SEP_cpp`. First, generate 40 samples from the Gaussian mixture model with two components. One of the component has zero mean vector, while the other a vector parallel to $(1, \\cdots, 1)^{\\rm T}$ with modulus 5. We assume the heterogeneous covariance structure between them.
 
-```{r, eval = FALSE}
+``` r
 # install.packages("mvtnorm")
 library("MclustSepCov")
 K <- 2
@@ -53,23 +43,27 @@ for(i in 1:K){
 }
 ```
 
-Each list has $20$ samples from each Gaussian component. Candidate models we consider here are the Gaussian mixture distribution with the number of mixture components within $\{1,2,3\}$ and with any of available covariance models.
-```{r, eval = FALSE}
+Each list has 20 samples from each Gaussian component. Candidate models we consider here are the Gaussian mixture distribution with the number of mixture components within {1, 2, 3} and with any of available covariance models.
+
+``` r
 fit <- Mclust_SEP_cpp(Y = Reduce(rbind, Y), p = p, q = q, Ks = 1:3, type_cov = "all", save_fit = TRUE)
 ```
 
 It contains a table showing BIC values for all fitted models.
-```{r, eval = FALSE}
+
+``` r
 fit$bic_table
 ```
 
-The best model with $2$ components and covariance model 'EEE-ECS' is saved in `best_model`
-```{r, eval = FALSE}
+The best model with 2 components and covariance model 'EEE-ECS' is saved in `best_model`
+
+``` r
 fit$best_model
 ```
 
 If `save_fit=TRUE` (default is `FALSE`), then one can access to all fitted models.
-```{r, eval = FALSE}
+
+``` r
 ## VVV-VUN
 fit$res_Mclust_SEP$`VVV-VUN`$`1`
 fit$res_Mclust_SEP$`VVV-VUN`$`2`
@@ -82,7 +76,6 @@ fit$res_Mclust_SEP$`EEE-EAR`$`3`
 ```
 
 <!-- ## Futher options available in the package -->
-
 <!-- ## Error and warning messages you may get -->
- 
-## References 
+References
+----------
