@@ -1,0 +1,14 @@
+Package: MclustSepCov
+Type: Package
+Title: Model based Clustering via Mixture Distribution under Covariance Separability
+Version: 1.0
+Date: 2019-01-02
+Author: Seongoh Park [aut, cre], Johan Lim [aut], Hye Jeong Choi [aut], Minjung Kwak [aut]
+Maintainer: Seongoh Park <seongohpark6@gmail.com>
+Description: Perform clustering with multivariate longitudinal data based on the Gaussian mixture distribution with separable covarinace matrix.
+License: GPL-3
+Encoding: UTF-8
+Imports: Rcpp (>= 0.12.19)
+Suggest: mvtnorm
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 6.1.1
