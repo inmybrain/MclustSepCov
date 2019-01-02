@@ -1,0 +1,3 @@
+useDynLib(MclustSepCov)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")

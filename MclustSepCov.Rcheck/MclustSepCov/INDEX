@@ -1,0 +1,9 @@
+MclustSepCov-package    Model based Clustering via Mixture Distribution
+                        under Covariance Separability
+Mclust_SEP_cpp          The model-based clustering for longitudinal
+                        data
+Mclust_SEP_each_cpp     The maximum likelihood estimation of the
+                        mixture distribution
+Optimization            Newton-Raphson's algorithm to find the optimal
+                        temporal correlation
+getCovariance           Generate temporal covariance matrices
