@@ -15,10 +15,10 @@ To install our package, you may simply execute the following codes:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("inmybrain/MclustSepCov", subdir = "MclustSepCov") # don't forget specify subdir!
+devtools::install_github("inmybrain/MclustSepCov", subdir = "MclustSepCov") # don't forget to specify subdir!
 ```
 
-If you come across a problem like [this](https://github.com/r-lib/remotes/issues/130), please track the issue to handle it.
+If you come across a problem like [this](https://github.com/r-lib/remotes/issues/130), please refer to [this answer](https://github.com/r-lib/remotes/issues/130#issuecomment-423830669) in that issue.
 
 Or you can install the source file using the command line after downloading it from [here](https://drive.google.com/uc?export=download&id=1l2q381dgUCr5uBN2Pp6ZjsDOYfF_U3mP);
 
