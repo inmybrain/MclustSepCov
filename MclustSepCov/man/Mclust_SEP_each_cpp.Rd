@@ -4,7 +4,7 @@
 \alias{Mclust_SEP_each_cpp}
 \title{The maximum likelihood estimation of the mixture distribution}
 \usage{
-Mclust_SEP_each_cpp(Y, p, q, K, type_vari, type_time, tol = 0.001,
+Mclust_SEP_each_cpp(Y, p, q, K, type_vari, type_time, tol = 1e-04,
   maxit = 500L)
 }
 \arguments{

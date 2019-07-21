@@ -20,7 +20,7 @@ A \code{q}-by-\code{q} temporal covariance matrix with diagonals 1.
 Return a covariance matrix with temporal structure.
 }
 \details{
-Following temporal structures are available. 
+Following temporal structures are available.
 \enumerate{
   \item Autogressive structure: \eqn{V = \big(\rho^{|i-j|}; 1\le i,j \le q\big)}.
   \item Compound symmetry structure: \eqn{V = \big({\rm I}(i=j) + \rho {\rm I}(i \neq j); 1\le i,j \le q\big)}.

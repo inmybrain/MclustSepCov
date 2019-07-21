@@ -6,6 +6,24 @@
 
 using namespace Rcpp;
 
+// Mclust_SEP_each_cpp
+Rcpp::List Mclust_SEP_each_cpp(arma::mat Y, int p, int q, int K, std::string type_vari, std::string type_time, double tol, int maxit);
+RcppExport SEXP _MclustSepCov_Mclust_SEP_each_cpp(SEXP YSEXP, SEXP pSEXP, SEXP qSEXP, SEXP KSEXP, SEXP type_variSEXP, SEXP type_timeSEXP, SEXP tolSEXP, SEXP maxitSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< int >::type p(pSEXP);
+    Rcpp::traits::input_parameter< int >::type q(qSEXP);
+    Rcpp::traits::input_parameter< int >::type K(KSEXP);
+    Rcpp::traits::input_parameter< std::string >::type type_vari(type_variSEXP);
+    Rcpp::traits::input_parameter< std::string >::type type_time(type_timeSEXP);
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    Rcpp::traits::input_parameter< int >::type maxit(maxitSEXP);
+    rcpp_result_gen = Rcpp::wrap(Mclust_SEP_each_cpp(Y, p, q, K, type_vari, type_time, tol, maxit));
+    return rcpp_result_gen;
+END_RCPP
+}
 // getCovariance
 arma::mat getCovariance(int q, double rho, std::string type);
 RcppExport SEXP _MclustSepCov_getCovariance(SEXP qSEXP, SEXP rhoSEXP, SEXP typeSEXP) {
@@ -35,29 +53,11 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// Mclust_SEP_each_cpp
-Rcpp::List Mclust_SEP_each_cpp(arma::mat Y, int p, int q, int K, std::string type_vari, std::string type_time, double tol, int maxit);
-RcppExport SEXP _MclustSepCov_Mclust_SEP_each_cpp(SEXP YSEXP, SEXP pSEXP, SEXP qSEXP, SEXP KSEXP, SEXP type_variSEXP, SEXP type_timeSEXP, SEXP tolSEXP, SEXP maxitSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
-    Rcpp::traits::input_parameter< int >::type p(pSEXP);
-    Rcpp::traits::input_parameter< int >::type q(qSEXP);
-    Rcpp::traits::input_parameter< int >::type K(KSEXP);
-    Rcpp::traits::input_parameter< std::string >::type type_vari(type_variSEXP);
-    Rcpp::traits::input_parameter< std::string >::type type_time(type_timeSEXP);
-    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
-    Rcpp::traits::input_parameter< int >::type maxit(maxitSEXP);
-    rcpp_result_gen = Rcpp::wrap(Mclust_SEP_each_cpp(Y, p, q, K, type_vari, type_time, tol, maxit));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_MclustSepCov_Mclust_SEP_each_cpp", (DL_FUNC) &_MclustSepCov_Mclust_SEP_each_cpp, 8},
     {"_MclustSepCov_getCovariance", (DL_FUNC) &_MclustSepCov_getCovariance, 3},
     {"_MclustSepCov_LB_algorithm_cpp", (DL_FUNC) &_MclustSepCov_LB_algorithm_cpp, 6},
-    {"_MclustSepCov_Mclust_SEP_each_cpp", (DL_FUNC) &_MclustSepCov_Mclust_SEP_each_cpp, 8},
     {NULL, NULL, 0}
 };
 
